@@ -21,12 +21,11 @@ class HomeView: UIView {
     }
     
     func setDelegtes(){
-        chifSpecialCollectionView.delegate = self
-        chifSpecialCollectionView.dataSource = self
-        popularDishesCollectionView.delegate = self
-        popularDishesCollectionView.dataSource = self
-        categoryCollectionView.delegate = self
-        categoryCollectionView.dataSource = self
+        [chifSpecialCollectionView,popularDishesCollectionView,categoryCollectionView].forEach {
+            $0?.delegate = self
+            $0?.dataSource = self
+        }
+        
     }
     
     private func registerCell() {
