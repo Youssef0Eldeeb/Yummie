@@ -25,7 +25,6 @@ class HomeView: UIView {
             $0?.delegate = self
             $0?.dataSource = self
         }
-        
     }
     
     private func registerCell() {
@@ -75,7 +74,7 @@ extension HomeView: UICollectionViewDelegate, UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == categoryCollectionView {
-            
+            delegate.didSelectItemList(index: indexPath)
         }else{
             delegate.didSelectItem(index: indexPath, collectionView: collectionView)
         }
