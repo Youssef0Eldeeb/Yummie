@@ -29,8 +29,8 @@ class ListDishesViewController: UIViewController, ListDishesViewControllerProtoc
     override func viewDidLoad() {
         super.viewDidLoad()
         mainView.viewDidLoad()
-        mainView.setDelegate()
-        
+        mainView.delegate = self
+
         title = catogry.name
     }
     
